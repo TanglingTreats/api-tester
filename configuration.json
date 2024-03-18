@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "url": "http://localhost:8090/leasapi",
+  "steps": [
+    {
+      "name": "Get EVENT"
+      "endpoint": "/event",
+      "method": "GET",
+      "stepType": "sequence",
+      "stepIndex": 1,
+      "testType": "sequence",
+      "load": 100,
+      "dependsOn": [],
+      "measure": "response time",
+      "threshold": "100 ms"
+    }
+  ]
+}
