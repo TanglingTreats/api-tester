@@ -1,3 +1,3 @@
-module github.com/TanglingTreats/api-tester
+module apitester
 
 go 1.22.1
