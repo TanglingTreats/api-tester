@@ -3,6 +3,7 @@ package main
 import (
 	_ "apitester/analytics"
 	_ "apitester/charting"
+	"apitester/config"
 	"fmt"
 )
 
@@ -14,5 +15,6 @@ import (
 // Create graphs
 
 func main() {
-	fmt.Println("Hello")
+	config, _ := config.ReadConfig()
+	fmt.Println(config.URL)
 }

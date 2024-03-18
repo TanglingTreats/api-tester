@@ -3,10 +3,10 @@
   "url": "http://localhost:8090/leasapi",
   "steps": [
     {
-      "name": "Get EVENT"
+      "name": "Get EVENT",
       "endpoint": "/event",
       "method": "GET",
-      "stepType": "sequence",
+      "stepType": "sequential",
       "stepIndex": 1,
       "testType": "sequence",
       "load": 100,
