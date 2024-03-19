@@ -19,9 +19,9 @@ func ReadConfig() (Config, error) {
 
 	defer jsonFile.Close()
 
-	bytes, _ := ioutil.ReadAll(jsonFile)
+	b, _ := ioutil.ReadAll(jsonFile)
 
-	json.Unmarshal(bytes, &config)
+	json.Unmarshal(b, &config)
 
 	return config, nil
 
