@@ -7,7 +7,6 @@
       "endpoint": "/event",
       "method": "GET",
       "stepType": "sequential",
-      "stepIndex": 1,
       "testType": "sequence",
       "load": 100,
       "dependsOn": [],

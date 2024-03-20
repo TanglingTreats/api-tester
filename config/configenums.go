@@ -34,7 +34,6 @@ type Step struct {
 	Endpoint  string      `json:"endpoint"`
 	Method    HttpMethod  `json:"method"`
 	StepType  StepType    `json:"stepType"`
-	StepIndex int         `json:"stepIndex"`
 	TestType  TestType    `json:"testType"`
 	Load      int         `json:"load"`
 	DependsOn []string    `json:"dependsOn"`
