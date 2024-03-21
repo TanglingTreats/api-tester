@@ -52,6 +52,7 @@ func (st *StepType) UnmarshalJSON(data []byte) (err error) {
 }
 
 // --- --- ---
+
 // --- Measurement ---
 type Measurement int
 
@@ -72,9 +73,9 @@ var (
 
 func parseMeasurement(s string) (Measurement, error) {
 	s = strings.TrimSpace(strings.ToLower(s))
-	value, ok := StepTypeValue[s]
+	value, ok := MeasurementValue[s]
 	if !ok {
-		return Measurement(0), fmt.Errorf("%q is not a valid step type", s)
+		return Measurement(0), fmt.Errorf("%q is not a valid measurement", s)
 	}
 	return Measurement(value), nil
 }
@@ -122,7 +123,7 @@ type Step struct {
 	StepType  StepType    `json:"stepType"`
 	TestType  TestType    `json:"testType"`
 	Load      int         `json:"load"`
-	DependsOn []string    `json:"dependsOn"`
+	DependsOn []int       `json:"dependsOn"`
 	Measure   Measurement `json:"measure"`
 	Threshold string      `json:"threshold"`
 }
@@ -130,5 +131,6 @@ type Step struct {
 type Config struct {
 	Version int    `json:"version"`
 	URL     string `json:"url"`
+	Token   string `json:"token"`
 	Steps   []Step `json:"steps"`
 }

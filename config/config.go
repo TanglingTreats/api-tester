@@ -21,7 +21,13 @@ func ReadConfig() (Config, error) {
 
 	b, _ := ioutil.ReadAll(jsonFile)
 
-	json.Unmarshal(b, &config)
+	err := json.Unmarshal(b, &config)
+
+	if err != nil {
+		fmt.Println("Error occurred unmarshalling")
+		fmt.Println(err.Error())
+		return config, error
+	}
 
 	return config, nil
 

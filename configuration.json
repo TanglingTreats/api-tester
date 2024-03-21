@@ -1,6 +1,7 @@
 {
   "version": 1,
   "url": "http://localhost:8090/leasapi",
+  "token": "",
   "steps": [
     {
       "name": "Get EVENT",
@@ -9,7 +10,18 @@
       "stepType": "sequential",
       "testType": "sequence",
       "load": 100,
-      "dependsOn": [],
+      "dependsOn": [1, 2],
+      "measure": "response time",
+      "threshold": "100 ms"
+    },
+    {
+      "name": "Get EVENT CONFIGS",
+      "endpoint": "/config/2",
+      "method": "GET",
+      "stepType": "sequential",
+      "testType": "sequence",
+      "load": 100,
+      "dependsOn": [1, 3],
       "measure": "response time",
       "threshold": "100 ms"
     }
